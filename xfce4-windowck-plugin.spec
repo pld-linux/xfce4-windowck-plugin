@@ -1,26 +1,34 @@
-Summary:	A date and time plugin for the Xfce panel
+Summary:	Xfce panel plugin which allows to put the maximized window title and windows buttons on the panel
 Name:		xfce4-windowck-plugin
-Version:	0.3.0
-Release:	2
+Version:	0.3.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://github.com/cedl38/xfce4-windowck-plugin/archive/v%{version}.tar.gz?/%{name}-%{version}.tar.gz
-# Source0-md5:	88e0dea73ed5d6597af86432fcfb4f1c
+# Source0-md5:	84a454ae925c5956fa87e3956fca149b
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-windowck-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfce4ui-devel
-BuildRequires:	xfce4-dev-tools >= 4.11.0
-BuildRequires:	xfce4-panel-devel >= 4.11.0
+BuildRequires:	xfce4-dev-tools >= 4.12.0
+BuildRequires:	xfce4-panel-devel >= 4.12.0
 BuildRequires:	xfce-preferred-applications
-Requires:	xfce4-panel >= 4.11.0
+Requires:	xfce4-panel >= 4.12.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-An additional clock for the Xfce panel which also shows the date, with
-adjustable font.
+Xfce panel plugin which allows to put the maximized window title and
+windows buttons on the panel.
+
+It's main features are:
+
+- Show the title and buttons of the maximized window on the panel.
+- Allow window actions on buttons and title clicks (activate, (un)maximize, close).
+- Allow window action menu on left button click.
+- Title formatting options.
+- xfwm4/unity theming support for buttons.
 
 %prep
 %setup -q
