@@ -1,11 +1,11 @@
 Summary:	Xfce panel plugin which allows to put the maximized window title and windows buttons on the panel
 Name:		xfce4-windowck-plugin
-Version:	0.4.4
+Version:	0.4.6
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://github.com/cedl38/xfce4-windowck-plugin/archive/v%{version}.tar.gz?/%{name}-%{version}.tar.gz
-# Source0-md5:	6ea068db172e9a399db6889d3ca73358
+Source0:	https://github.com/cedl38/xfce4-windowck-plugin/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	a9d711a5ea0d3e7947e1fb4d4724e481
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-windowck-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README TODO
+%doc AUTHORS NEWS README.md TODO
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libwckbuttons.so
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libwindowck.so
 %{_datadir}/xfce4/panel/plugins/wckbuttons.desktop
