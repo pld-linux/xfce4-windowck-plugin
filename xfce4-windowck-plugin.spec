@@ -1,11 +1,11 @@
 Summary:	Xfce panel plugin which allows to put the maximized window title and windows buttons on the panel
 Name:		xfce4-windowck-plugin
-Version:	0.5.0
+Version:	0.5.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-windowck-plugin/0.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	90560f9b8ebdbc811ab5c28521635c0d
+# Source0-md5:	9dc7dfbf53dea83678719ab150f5fb0c
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-windowck-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -71,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README.md TODO
+%doc AUTHORS NEWS README.md
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libwckbuttons.so
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libwckmenu.so
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libwindowck.so
@@ -79,6 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/panel/plugins/wckmenu-plugin.desktop
 %{_datadir}/xfce4/panel/plugins/windowck-plugin.desktop
 %{_iconsdir}/hicolor/*x*/apps/wckbuttons-plugin.png
+%{_iconsdir}/hicolor/*x*/apps/wckmenu-plugin.png
 %{_iconsdir}/hicolor/*x*/apps/windowck-plugin.png
 %{_datadir}/themes/Windowck
 %{_datadir}/themes/Windowck-dark
