@@ -1,20 +1,20 @@
 Summary:	Xfce panel plugin which allows to put the maximized window title and windows buttons on the panel
 Name:		xfce4-windowck-plugin
-Version:	0.5.2
+Version:	0.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-windowck-plugin/0.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	e84cd9a3110eedf2eb33370551c16e97
+Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-windowck-plugin/0.6/%{name}-%{version}.tar.xz
+# Source0-md5:	e721212f27223b73f2d305be9a71b02a
 URL:		https://goodies.xfce.org/projects/panel-plugins/xfce4-windowck-plugin
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	glib2-devel >= 1:2.64.0
 BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 3.22
 BuildRequires:	libxfce4ui-devel >= 4.16.0
 BuildRequires:	libxfce4util-devel >= 4.16.0
+BuildRequires:	meson >= 0.54.0
+BuildRequires:	ninja
 BuildRequires:	xfce-preferred-applications >= 4.16.0
 BuildRequires:	xfce4-dev-tools >= 4.16.0
 BuildRequires:	xfce4-panel-devel >= 4.16.0
@@ -39,22 +39,13 @@ It's main features are:
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-static
-%{__make}
+%meson
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/*.la
+%meson_install
 
 # unsupported locale
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{ie,ru_RU}
